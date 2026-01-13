@@ -1,0 +1,364 @@
+
+<!doctype html>
+<html lang="fr" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SADC — votre partenaire petit déjeuner</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        background-color: #1a1a1a;   /* 🔹 fond gris très foncé */
+        color: #f2f2f2;              /* 🔹 texte clair par défaut */
+      }
+
+     .contact-banner {
+    background-color: #333b2d;
+    padding: 80px 20px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+      /* 🔹 Police spécifique pour le titre et le sous-titre */
+      .hero-content h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4rem;
+        letter-spacing: 2px;
+      }
+
+      .hero-content p {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 300;
+      }
+
+      /* --- Section Hero avec vidéo --- */
+      .hero {
+        position: relative;
+        height: 85vh; /* Hauteur fixe pour encadrer la vidéo */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        margin-top: 70px; /* pour laisser la place à la navbar fixe */
+      }
+
+      /* --- Vidéo de fond --- */
+      .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        filter: brightness(60%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* --- Bouton clair transparent --- */
+      .btn-main {
+        border-radius: 50px;
+        padding: 12px 35px;
+        font-weight: 500;
+        transition: 0.3s;
+        background-color: rgba(255, 255, 255, 0.35);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+        backdrop-filter: blur(6px);
+      }
+
+      .btn-main:hover {
+        background-color: #fff;
+        border-color: #fff;
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      /* --- Section Services avec texte sur image --- */
+      .services-section {
+        background-color: #111;
+        color: #fff;
+      }
+
+      .service-block {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .service-block:hover .service-img {
+        transform: scale(1.1); /* petit zoom au survol */
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45); /* voile sombre transparent */
+        color: #fff;
+        padding: 20px;
+        transition: background 0.3s ease;
+      }
+
+      .service-block:hover .overlay {
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .overlay h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+      }
+
+      .overlay p {
+        font-size: 1rem;
+        max-width: 85%;
+      }
+
+      /* --- Logo navbar --- */
+      .navbar-brand img {
+        height: 45px;
+        width: auto;
+      }
+
+      footer {
+        background-color: #111;
+        color: #ccc;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      /* --- Hauteur fixée par Bootstrap override --- */
+.navbar {
+    height: 70px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+/* --- Fond + ombre + hauteur custom --- */
+.custom-navbar {
+    background-color: #222;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #444;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Logo */
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+}
+
+/* Liens */
+.navbar-links a {
+    font-family: "Playfair Display", serif;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.navbar-links a:hover {
+    color: #cfa96a;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+
+      /* 🔹 Bandeau de séparation / intro sur fond foncé */
+      .intro-section {
+        background-color: #222;   /* 🔹 au lieu du blanc */
+        color: #f5f5f5;
+      }
+
+      .intro-section h2 {
+        color: #ffffff;
+        font-family: "Playfair Display", serif;
+      }
+
+      .intro-section p {
+        color: #e0e0e0;
+      }
+      
+    .contact-banner {
+        background-color: #333b2d;
+        padding: 80px 20px;
+        color: #fff;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-banner .container {
+        max-width: 900px;
+    }
+
+    .banner-left,
+    .banner-right {
+        flex: 1;
+        text-align: center;
+    }
+
+    .banner-divider {
+        width: 1px;
+        height: 100px;
+        background-color: rgba(255,255,255,0.4);
+        margin:0 30px;
+          }
+
+          /* Mise en place du reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+/* Quand l’élément devient visible */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    </style>
+  <header class="navbar navbar-expand-md fixed-top custom-navbar">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="../index.html">
+      <img src="img/logo.png" alt="Logo SADC" />
+    </a>
+
+    <!-- Menu centré -->
+    <nav class="navbar-links position-absolute start-50 translate-middle-x d-flex gap-5">
+            <a href="page/cafe.html">Espace Café </a>
+            <a href="page/petitdéjeuner.html">Petit Déjeuner</a>
+            <a href="page/collectivite.html">Pôle Santé</a>
+            
+            <a href="#contact-bas">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+  <body>
+    <!-- 🌄 Vidéo de présentation -->
+    <section class="hero">
+      <video autoplay muted loop playsinline class="background-video">
+        <source src="video/test1.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
+
+      <div class="hero-content">
+        <h1 class="display-4 fw-bold mb-3">SADC</h1>
+        <p class="lead mb-4">Votre partenaire petit déjeuner</p>
+        <a href="#services" class="btn btn-main">Découvrir</a>
+      </div>
+    </section>
+
+    <!-- 🔹 Bandeau de séparation -->
+    <section class="intro-section text-center">
+      <div class="container py-5">
+        <h2 class="display-6 fw-semibold mb-3">Une pause, un moment, un plaisir partagé.</h2>
+        <p class="lead">Découvrez nos solutions petit-déjeuner et café pour vos espaces professionnels.</p>
+      </div>
+    </section>
+
+    <!-- 🖼️ Section Services en images -->
+    <section id="services" class="services-section">
+      <div class="container-fluid px-0">
+        <div class="row g-0 text-center">
+          <!-- Bloc 1 : Espace Café -->
+          <div class="col-lg-4 service-block position-relative">
+            <img src="img/offrecafe.jpg" alt="Espace Café" class="img-fluid w-100 service-img" />
+            <div class="overlay d-flex flex-column justify-content-center align-items-center">
+              <h3 class="fw-bold mb-2">Espace Café</h3>
+              <p class="mb-3">Découvrez nos solutions café adaptées à vos besoins</p>
+              <a href="page/cafe.html" class="btn btn-main">Découvrir</a>
+            </div>
+          </div>
+
+          <!-- Bloc 2 : Petit Déjeuner -->
+          <div class="col-lg-4 service-block position-relative">
+            <img src="img/pdj2.jpg" alt="Petit Déjeuner" class="img-fluid w-100 service-img" />
+            <div class="overlay d-flex flex-column justify-content-center align-items-center">
+              <h3 class="fw-bold mb-2">Petit Déjeuner</h3>
+              <p class="mb-3">Buffets gourmands pour bien commencer la journée</p>
+              <a href="page/petitdéjeuner.html" class="btn btn-main">Découvrir</a>
+            </div>
+          </div>
+
+          <!-- Bloc 3 : Collectivités -->
+          <div class="col-lg-4 service-block position-relative">
+            <img src="img/colec.jpg" alt="Collectivité" class="img-fluid w-100 service-img" />
+            <div class="overlay d-flex flex-column justify-content-center align-items-center">
+              <h3 class="fw-bold mb-2"> Pôle Santé</h3>
+              <p class="mb-3">Des solutions modernes pour vos milieux hospitalié</p>
+              <a href="page/collectivite.html" class="btn btn-main">Découvrir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+<!-- BANDEAU CONTACT (bien refermé) -->
+<div class="contact-banner" id="contact-bas"
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+        <div class="banner-left">
+            <h3>Adresse et horaires</h3>
+            <p>Chemin d'Apietto<br>20167 Mezzavia<br> du lundi au vendredi de 8h à 17h</p>
+        </div>
+
+        <div class="banner-divider"></div>
+
+        <div class="banner-right">
+            <h3>Nous contacter</h3>
+            <p>04.95.20.31.34<br>contact@sadc-ajaccio.com</p>
+        </div>
+
+    </div>
+</div>
+
+
+    <!-- 📜 Pied de page -->
+    <footer>
+      <p>&copy; 2025 SADC — Tous droits réservés</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>
